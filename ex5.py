@@ -1,18 +1,20 @@
-my_name = 'Shirish Babbur'
-my_age = 22 #Yes it's a Lie.
-my_height = 71 #inches
-my_weight = 149 #lbs
-my_eyes = 'Blue'
-my_teeth = 'White'
-my_hair = 'Brown'
+name = 'Shirish Babbur'
+age = 22 #Yes it's a Lie.
+HEIGHT_CONSTANT = 2.54 #Constant to multiply with to convert inches to centimeters.
+height = 71  * HEIGHT_CONSTANT #inches
+WEIGHT_CONSTANT = 0.435 #Constant to multiply with to convert lbs to Kgs.
+weight = 149 *WEIGHT_CONSTANT #lbs
+eyes = 'Blue'
+teeth = 'White'
+hair = 'Brown'
 
-print(f"Let's talk about {my_name}.")
-print(f"He's {my_height} inches tall.")
-print(f"He's {my_weight} pounds heavy.")
+print(f"Let's talk about {name}.")
+print(f"He's {height} centimeters tall.")
+print(f"He's {weight} Kgs heavy.")
 print("Actually that's not too heavy.")
-print(f"He's got {my_eyes} eyes and {my_hair} hair.")
-print(f"His teeth are usually {my_teeth} depending on the coffee.")
+print(f"He's got {eyes} eyes and {hair} hair.")
+print(f"His teeth are usually {teeth} depending on the coffee.")
 
 #This line is tricky, try to get it exactly right
-total = my_age + my_height + my_weight
-print(f"If I add {my_age}, {my_height} and {my_weight} I get {total} .")
+total = age + height + weight
+print(f"If I add {age}, {height} and {weight} I get {total} .")
