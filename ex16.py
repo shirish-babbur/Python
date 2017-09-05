@@ -1,5 +1,7 @@
+# imports argv from the module sys
 from sys import argv
 
+# unpacks argv into script and filename
 script, filename = argv
 
 print(f"We are going to erase {filename}.")
@@ -9,10 +11,12 @@ print("If you do want that, Hit RETURN.")
 input("?")
 
 print("Opening the file...")
+# Opens file in the write mode.
 target = open(filename,"w")
 
 print("Truncating the file. Goodbye!")
-target.truncate()
+# Truncates file contents.
+# target.truncate()  Redundant since its 'w' mode.
 
 print("Now I'm going to ask you for three lines.")
 
@@ -22,12 +26,7 @@ line3 = input("Line 3: ")
 
 print("I'm going to write these to file.")
 
-target.write(line1)
-target.write("\n")
-target.write(line2)
-target.write("\n")
-target.write(line3)
-target.write("\n")
+target.write(f"{line1}\n{line2}\n{line3}\n")
 
 print("And Finally, we close it.")
 target.close()
