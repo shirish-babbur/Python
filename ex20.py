@@ -13,7 +13,7 @@ def rewind(f):
 
 # function to print file content line by line.
 def print_a_line(line_count, current_file):
-    print(line_count,current_file.readline())
+    print(line_count,current_file.readline(), end = "")
 
 # Opens a file.
 current_file = open(input_file)
