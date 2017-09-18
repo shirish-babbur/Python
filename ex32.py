@@ -24,6 +24,18 @@ for i in range(0, 6):
     #append is a function that lists Understand
     elements.append(i)
 
+
+# now we can print them out Too
+for i in elements:
+    print(f"Element was : {i}")
+
+# some funny opeartion on list
+for i in elements:
+    if(i % 2 != 0):
+        index = elements.index(i);
+        elements.remove(i);
+        elements.insert(index, i * i);
+
 # now we can print them out Too
 for i in elements:
     print(f"Element was : {i}")
