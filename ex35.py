@@ -4,7 +4,7 @@ def gold_room():
     print("This room is full of gold. How much do you take?")
 
     choice = input("> ")
-    if "0" in choice or "1" in choice:
+    if choice.isnumeric():
         how_much = int(choice)
     else:
         dead("Man, learn to type number.")
@@ -46,6 +46,7 @@ def cthulhu_room():
     choice = input("> ")
 
     if "flee" in choice:
+        print("Coward Spotted!")
         start()
     elif "head" in choice:
         dead("Well that was tasty!")
