@@ -58,3 +58,40 @@ if not state:
 # get a city with default
 city = cities.get('TX', 'Does Not Exist')
 print(f"The city for the state 'TX' is : {city}")
+
+
+# Dictionary in Python v3.6 is Ordered.
+States_IN = {
+    "Maharashtra":"MH",
+    "Karnataka":"KA",
+    "Telangana":"TN",
+    "Andhra Pradesh":"AP"
+}
+
+Cities_IN = {
+    "MH":"Mumbai",
+    "KA":"Banglore",
+    "TN":"Hydrabad",
+    "AP":"Amaravati"
+}
+for state,abbrev in States_IN.items():
+    print(f"State {state} has abbreviation as {abbrev}.")
+    print(f"This {state} has Capital city {Cities_IN[abbrev]}.")
+
+print("-"*20)
+print("Now Let's delete Maharashtra!")
+del States_IN['Maharashtra']
+del Cities_IN['MH']
+print("After Deletion")
+for state,abbrev in States_IN.items():
+    print(f"State {state} has abbreviation as {abbrev}.")
+    print(f"This {state} has Capital city {Cities_IN[abbrev]}.")
+print("-"*20)
+
+print("Now Let's merge both the Dictionaries....")
+States_IN_List = list(States_IN.items())
+Cities_IN_List = list(Cities_IN.items())
+combined = dict(list(zip(States_IN_List, Cities_IN_List)))
+print(len(combined))
+for state,abbrev in combined.items():
+    print(f"State {state} has abbreviation as {abbrev}.")
