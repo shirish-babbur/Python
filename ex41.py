@@ -1,12 +1,13 @@
 import random
-from urllib.request import urlopen
+#from urllib.request import urlopen
+import requests
 import sys
 
 WORD_URL = "http://learncodethehardway.org/words.txt"
 WORDS = []
 
 PHRASES = {
-    "class %%%(%%%):" : "Make a class Named %%% that is-a %%%.",
+    "class %%%(%%%):" : "Make  a class Named %%% that is-a %%%.",
     "class %%%(object):\n\tdef __init__(self, ***)" : "class %%% has-a __init__ that takes self and *** parameter",
     "class %%%(object):\n\tdef ***(self, @@@)" : "class %%% has-a function *** that takes self and @@@ parameter",
     "*** = %%%()" : "Set *** to an instance of class %%%.",
@@ -21,8 +22,10 @@ else:
     PHRASE_FIRST = False
 
 # load up the words from the site
-for word in urlopen(WORD_URL).readlines():
-    WORDS.append(str(word.strip(), encoding = "utf-8"))
+#for word in urlopen(WORD_URL).readlines():
+#    WORDS.append(str(word.strip(), encoding = "utf-8"))
+for word in requests.get(WORD_URL).text.split("\n"):
+    WORDS.append(word.strip())
 
 def convert(snippet, phrase):
     class_names = [w.capitalize() for w in random.sample(WORDS, snippet.count("%%%"))]
