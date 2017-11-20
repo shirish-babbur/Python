@@ -1,0 +1,4 @@
+#!/webonise/bin/env python
+
+import Demo
+print Demo.say_hi()
