@@ -12,13 +12,13 @@ def scan(sentence):
     words = sentence.split()
     result = []
     for word in words:
-        if len([val for typ,val in verbs if val == word]) > 0 :
+        if len([val for typ,val in verbs if val.lower() == word.lower()]) > 0 :
             result.extend([(typ, val) for typ,val in verbs if val == word])
-        elif len([val for typ,val in directions if val == word]) > 0:
+        elif len([val for typ,val in directions if val.lower() == word.lower()]) > 0:
             result.extend([(typ, val) for typ,val in directions if val == word])
-        elif len([val for typ,val in stop_words if val == word]) > 0:
+        elif len([val for typ,val in stop_words if val.lower() == word.lower()]) > 0:
             result.extend([(typ, val) for typ,val in stop_words if val == word])
-        elif len([val for typ,val in nouns if val == word]) > 0:
+        elif len([val for typ,val in nouns if val.lower() == word.lower()]) > 0:
             result.extend([(typ, val) for typ,val in nouns if val == word])
         elif convert_numbers(word) != None:
             result.extend([('number', convert_numbers(word))])
