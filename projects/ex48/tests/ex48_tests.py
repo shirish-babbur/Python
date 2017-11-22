@@ -56,4 +56,5 @@ def test_errors():
         ('noun', 'door')
     ])
 def test_parse_sentence():
-    assert_raises(parser.ParserError, parser.parse_sentence, [('stop_word', 'the'),('stop_word', 'the'), ('stop_word', 'the')])
+    pars = parser.Parser()
+    assert_raises(parser.ParserError, pars.parse_sentence, [('stop_word', 'the'),('stop_word', 'the'), ('stop_word', 'the')])
