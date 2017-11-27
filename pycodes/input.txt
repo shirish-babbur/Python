@@ -1,0 +1,26 @@
+This is README file for the wc.py
+
+
+What is WC?
+
+- It is a linux/Unix based command which takes filename as input.
+- It gives out information like number of lines, words and chars present in that file.
+
+What WC.PY do?
+This program here named as wc.py mimics the same functionality for txt based files.
+It is written in python and works with python3.x and above.
+
+How to run?
+You can use it if you want to know the short information of file by just typing
+use without '<>':
+
+python wc.py <your filename with extension>
+
+What will be output?
+You will get output as below:
+
+<your filename with extension> contains:
+
+lines : <no of lines like 2,3,etc>
+words : <no of words like 2,3,etc>
+chars : <no of chars like 2,3,etc>
